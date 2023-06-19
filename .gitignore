@@ -1,0 +1,9 @@
+# Project exclude paths
+/.idea
+/shelf/
+/workspace.xml
+*.iml
+*.iws
+#Maven
+/target/
+resources
