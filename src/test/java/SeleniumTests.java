@@ -9,6 +9,9 @@ public class SeleniumTests {
     private final By A_FROM = By.id("afrom");
     private final By B_FROM = By.id("bfrom");
     private final By GO_GO_GO_BTN = By.xpath(".//span[@class='gogogo']");
+    private final By NAME_INPUT = By.id("name");
+
+    private final String NAME = "Alex";
 
     private final String URL = "http://qaguru.lv:8089/tickets/";
     private final String DEPARTURE_AIRPORT = "RIX";
@@ -35,6 +38,11 @@ public class SeleniumTests {
 
         //find and click on GO
         driver.findElement(GO_GO_GO_BTN).click();
+
+        //fill in passenger personal info
+        WebElement userNameInputField = driver.findElement(NAME_INPUT);
+        userNameInputField.clear();
+        userNameInputField.sendKeys(NAME);
 
 
     }
