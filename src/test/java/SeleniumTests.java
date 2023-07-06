@@ -19,7 +19,7 @@ public class SeleniumTests {
 
 
     @Test
-    public void test(){
+    public void test() {
         //open and maximize browser
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -43,7 +43,6 @@ public class SeleniumTests {
         WebElement userNameInputField = driver.findElement(NAME_INPUT);
         userNameInputField.clear();
         userNameInputField.sendKeys(NAME);
-
 
     }
 }
