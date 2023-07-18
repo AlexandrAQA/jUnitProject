@@ -5,12 +5,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.List;
+
 public class SeleniumTests {
     private final By A_FROM = By.id("afrom");
     private final By B_FROM = By.id("bfrom");
     private final By GO_GO_GO_BTN = By.xpath(".//span[@class='gogogo']");
     private final By NAME_INPUT = By.id("name");
 
+    private final By SELECTED_AIRPORT = By.xpath(".//span[@class = 'bTxt']");
     private final String NAME = "Alex";
 
     private final String URL = "http://qaguru.lv:8089/tickets/";
@@ -38,6 +41,9 @@ public class SeleniumTests {
 
         //find and click on GO
         driver.findElement(GO_GO_GO_BTN).click();
+
+        //check is selected airport appears
+         List<WebElement> selectedAirport = driver.findElements(SELECTED_AIRPORT);
 
         //fill in passenger personal info
         WebElement userNameInputField = driver.findElement(NAME_INPUT);
